@@ -32,11 +32,16 @@ export default class CustomWebView extends Component {
 
     return (
       <WebView
-        ref={webviewRef}
+        ref='CUSTOM_WEBVIEW'
         {...props}
         nativeConfig={this.getNativeConfig()}
       />
     );
+  }
+  
+  goBack() {
+    this.refs['CUSTOM_WEBVIEW'].goBack();
+    return true;
   }
 
   getNativeConfig() {
